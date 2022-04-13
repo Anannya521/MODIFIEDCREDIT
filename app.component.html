@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="abc">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1 style="color: rgb(70, 55, 55);" >APPLY FOR CREDIT CARD</h1>
+            <h6 style="color:white" >Please Enter Details</h6>
+          </div>
+            <form [formGroup]="registerform" (ngSubmit)="login()">
+              <div  class="form-group-mb-3">
+                <label for="acnum" style=" color: white;"> ACCOUNT NUMBER</label>
+                <input type="acnum" class="form-control" id="acnum" formControlName="acnum">
+                <div *ngIf="acnum.invalid && acnum.touched">
+                  <br>
+                  <small style="color:red" *ngIf="acnum.errors.required">*ACCOUNT NUMBER IS REQUIRED</small>
+                 
+          </div>
+               
+              </div>
+              <br>
+              <div class="form-group-mb-3">
+                <label for="cnum" style=" color: white;" >CONTACT NUMBER</label>
+                <input type="cnum" class="form-control" id="cnum" formControlName="cnum">
+               <div *ngIf="cnum.invalid && cnum.touched">
+                       <small style="color:red" *ngIf="cnum.errors.required">*CONTACT NUMBER IS REQUIRED</small>
+                       
+               </div> 
+              </div>
+              <br>
+             <div class="text-center"><br/>
+              <button type="submit" class="bg-success"  [disabled]="loginform.invalid" style="color: brown; size: 50px;">REGISTER</button>
+              <router-outlet></router-outlet>
+             
+            </div>
+            <br> 
+            </form>
+         <br>
+        </div>
+    
+    </div>
+  </div>
+</div>
